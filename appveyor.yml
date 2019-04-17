@@ -1,0 +1,32 @@
+environment:
+
+  build_cloud: docker
+
+  matrix:
+
+  - job_name: sources
+
+  - job_name: node_6
+    job_group: build
+	  job_depends_on: sources
+    docker_image: node:6
+
+matrix:
+  fast_finish: true
+  
+for:
+-
+  matrix:
+    only:
+      - job_name: sources
+  build: off
+  test: off
+	
+-
+  matrix:
+    only:
+      - job_name: node_6
+	
+	test_script:
+	- node --version
+	- npm --version
