@@ -21,12 +21,12 @@ for:
       - job_name: sources
   build: off
   test: off
-	
+
 -
   matrix:
     only:
       - job_name: node_6
-	
+
   test_script:
   - node --version
   - npm --version
