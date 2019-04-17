@@ -8,7 +8,7 @@ environment:
 
   - job_name: node_6
     job_group: build
-	  job_depends_on: sources
+    job_depends_on: sources
     docker_image: node:6
 
 matrix:
@@ -27,6 +27,6 @@ for:
     only:
       - job_name: node_6
 	
-	test_script:
-	- node --version
-	- npm --version
+  test_script:
+  - node --version
+  - npm --version
