@@ -1,7 +1,6 @@
+build_cloud: docker
+
 environment:
-
-  build_cloud: docker
-
   matrix:
 
   - job_name: sources
